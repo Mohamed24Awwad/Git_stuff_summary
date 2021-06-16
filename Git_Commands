@@ -1,0 +1,157 @@
+Git Commands 
+------------------------------------------
+cd .gitconfig        open the configuartion file 
+git --version 
+
+git config --global user.name"mohamed"            to set a global user for your device 
+git config user.email"moha,edawwad578@gmail.com"  to set an email to the previous user 
+git config --list                                 to list all the configuration 
+git config --global core.editor "vim"             to set a default app to open the git shell
+git cofig --global color.ui true                  to colorize the git command's outputs 
+git help
+man git-log                                       also for listing help inso 
+--------------------------------------------------------------------------------------------
+                                  Gettings Started
+--------------------------------------------------------------------------------------------
+git init                                          for initializing a new repo
+ls -la .git                                       for openning the .git hidden files contains git configuration in this directory 
+git add .                                         add every change that have been made in this dir
+git add file.txt                                  add a spacific file to the staging index.
+git commit -m "first commet"                      adding a massege to the first commit 
+--------------------------------------------------------------------------------------------
+                                 Basic cycle of git
+--------------------------------------------------------------------------------------------
+1- make change 
+2- add changes
+3- commit the changes
+--------------------------------------------------------------------------------------------
+git log                                          showing the commits log 
+git log -n                                       to limit the number of commits ( 1 or 2 or any number of commit you need to see)
+git log --since=2021-05-30                       it gives the commits in a certain date 
+git log --until=2021-05-30                       all commits over the date specified
+git log --grep="init"                            use grep which stands for global regular exprition to search for a spacific word in our commit
+git log --oneline                                to show all the commit massages in one view
+git log --oneline -3                             just to show 3 limited commits
+git log --since="3 weeks ago" --until="3 days ago"   to filter viewing the commits 
+git log --since="3.weeks" --until="2.days"           alternative way to did the previous command
+git log --author="mohamed"                       searching for author's commits 
+git log -p                                       to know exactly what happened in the commits (belongs to files's edits)
+git log -p d429dcf08c5.. index.html              to know what happend in a specific commit (hash id)
+or you can use the following command to list all the changes in a specific file
+git log --stat --summary   
+git log --format=oneline                         to show commit details including the full commit's hash string
+git log --graph                                  show a graph of the commits 
+git log --oneline --graph --all --decorate       a combination of all kind of log 
+---------------------------------------------------------------------------------------------
+git show                                         to show waht happened in commits in details 
+git show --oneline                               to show what happend in commits in details also in one line 
+git show d429dcf08c5                             to show what happened in the tre-ish in details 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+git status                                       for knowing that where the commit on working tree or staging index or on the repo
+git diff                                         for showing the diffrences between two files in content between working directory and the repo 
+git diff --staged                                for showing the diffrences between two files in the repo and the staging directory 
+git diff --cashed                                the same with --staged
+
+git diff --color-words                           it colorize the changed words or lines in your project files have changes
+git rm <file>                                    to remove file from the repo 
+git mv <file01> <the new name>                   to rename a file 
+---------------------------------------------------------------------------------------------
+git commit -am "massege"                         add all files in the project then commit them all in one step
+git checkout -- <file>                           to restore all deleted content in the file 
+git commit --amend -m "massege"                  use --amend when we try to change the commit massege or edit the last commit 
+git checkout 😊️0c075783097bbbe -- <file>         to revert the selected file by its commit hash to the last change we made 
+git revert 0c075783097bbbe                       to revert the changes and add another commit massage 
+git clean -f                                     force to remove junk files in the working dir not the staging or repo 
+git clean -n                                     clean junk files in the wi=orking dir
+-----------------------------------------------------------------------------------------------------------------------------------------------
+                                                Git Ignore
+-----------------------------------------------------------------------------------------------------------------------------------------------
+we use .gitignore file to ignore some files or folder to do not be tracked by git,using REGX
+---------------------------------------------------------------------------------------------
+*.js                                              ignore all files ends with .js 
+!.js                                              do not ignore files ends with .js 
+#                                                 use hash to add a comment 
+----------------------------------------------------------------------------------------------
+we need to keep track with the empty folders inside our working directory ?
+
+to do so, we create a hidden file and named with .gitkeep to let git keeping track this folder 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                 Tree
+                     ------------------------------------------------------------
+git ls-tree HEAD                                  to list all the commits in the master branch
+git ls-tree HEAD <branch name>                    to list all the commit tree in a specific branch 
+git ls-tree HEAD master <folder/>                 to list all the commit tree in a spacific folder inside the master branch 
+git ls-tree HEAD master^ <folder/>                to list all commits before the last commit (parent commit)
+
+notice--> tree flag is a directory    blob is a file
+-----------------------------------------------------------------------------------------------------------------------------
+
+                                                Branches
+                     ---------------------------------------------------------------
+git branch                                       to show in what branch you are 
+git branch <branch_name>                         to create new branch 
+git .git/HEAD                                    to know in what branch you located 
+git checkout <branch_name>                       to switch to another branch
+git checkout -b <branch_name>                    create and switch to the definied branch 
+git diff master..<branch_name>                   show the diffrences in changes between master and the branch
+git branch -m <old_branch_name> <new_branch_name> rename the branch
+git branch -d <branch_name>                      to delete a branch 
+------------------------------------------------------------------------------------------------------------
+                                       
+                                            Merging Branches
+                   ------------------------------------------------------------------------
+git merge <branch_name>                           to merge branch into the master 
+git branch --merged                               to know what branch merged to the master 
+git merge --abort                                 to terminate the merging process
+------------------------------------------------------------------------------------------------------------
+                                            	Stashing
+                  ---------------------------------------------------------------------------
+git statsh save "massage to written"                                  to save your edits nut not upload them to the repo or commited,they stay inbetween but not commited
+
+git stash list                                     to show all the stashed list 
+git stash show                                     to see in what file you made the change 
+git stash show -p stash@{0}                        to show all the details you have been made in the stashed file in details 
+git stash pop                                      to pull out the stashed edits from stash to working dir and also delete it from the stashed section 
+
+git stash apply                                    to pull out the stashed edits from stash to working dir and save a copy from the edits in the stash section 
+
+git stash drop stash@{0}                           to delete all the stashed edits for perminant time 
+
+-----------------------------------------------------------------------------------------------------------
+                       			Remotes
+               -------------------------------------------------------------------
+git remote                                         to list all your remotes you have 
+git remote <alies> <ulr_for_remote_repo>           to add a remote with a name and connect it to your repo
+git remote -v                                      to list all info related to your remotes
+cat .git/config                                    you'll show the list of your remotes here
+git push -u <alies> master                         to push your commits to the remote branch 
+git psuh -f <alies> master                         to force the push to the master branch to the repo 
+git branch -r                                      to list all the remotes you have 
+git branch -b <branch_name> origin/<branch_name>   creat and automaticlly checkout to the created branch on the remote repo
+-----------------------------------------------------------------------------------------------------------
+
+                                           Alies-(Shortcuts)
+                 --------------------------------------------------------------------
+
+cd ~ 
+git config --global alies.<put_the_abbreviation_here> "<put_the_full_command_here>     this to set an abbreviation for some commands 
+
+git config --global alies.st "status"             shorten the status command
+-----------------------------------------------------------------------------------------------------------
+
+                                  Saving Github Credentials when pushing
+                 ---------------------------------------------------------------------
+1 / You can create an Access token from github and while you pushing to the repo you will pate it in the name and password fields 
+-----------------------------------------------------------------------------------
+Example:
+
+git push -u origin master
+
+Enter your UserName : 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
+Enter Your Password : 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
+
+finally you'll be granted to push easily 
+==========================================================================================================
+
+2 / Caching password using helpers 
