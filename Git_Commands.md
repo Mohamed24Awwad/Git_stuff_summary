@@ -64,13 +64,13 @@ git config --global init.defaultBranch main
 
 ## Getting started
 
-- Initialize a reposiTory:
+- Initialize a repository:
 
 ```bash
 git init
 ```
 
-- Show the .git direcTory (hidden):
+- Show the .git directory (hidden):
 
 ```bash
 ls -la .git
