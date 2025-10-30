@@ -22,7 +22,7 @@ echo "Hello, Dude" | git hash-object --stdin
 #The same way of work with SHA1 at linux
 echo -e "blob 12\0Hello, Dude" | shasum
 #Result --> 02fc3c47b2f548b06b485fc7541212975c790c2c  -
-\\ and git keeps track of every change that occurred over any of the tracked file-change by the changing of the object hash
+#Furthermore git keeps track of every change that occurred over any of the tracked file-change by the changing of the object hash
 
 git cat-file -t <output object from SHA1>
 # Will print the type of that object is it blob or image or any of git file types  #blob
