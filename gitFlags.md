@@ -6,7 +6,7 @@ A quick reference guide for understanding Git status flags and indicators.
 
 ## Status Flags
 
-### 📝 **A** — Added
+###  **A** — Added
 A new file that has been staged (added to the index) and is ready to be committed.
 
 ```bash
@@ -16,7 +16,7 @@ git status
 # A  newfile.txt
 ```
 
-### ✏️ **M** — Modified
+###  **M** — Modified
 An existing file that has been changed. Can appear in two contexts:
 - **Staged (green M)**: Changes are in the index, ready to commit
 - **Unstaged (red M)**: Changes exist in working directory but not staged
@@ -28,7 +28,7 @@ git status
 #  M unstaged-file.txt    (unstaged modification)
 ```
 
-### 🗑️ **D** — Deleted
+###  **D** — Deleted
 A file that has been deleted. Can appear as:
 - **Staged deletion**: File removed and deletion staged
 - **Unstaged deletion**: File removed but deletion not staged
@@ -40,7 +40,7 @@ git status
 # D  oldfile.txt
 ```
 
-### ❓ **U** / **??** — Untracked
+###  **U** / **??** — Untracked
 A file that is new or has been changed but has **not been added** to the repository yet. Git is not tracking this file.
 
 ```bash
@@ -49,7 +49,7 @@ git status
 # ?? untracked-file.txt
 ```
 
-### ⚠️ **C** / **UU** — Conflict
+###  **C** / **UU** — Conflict
 There is a merge conflict in the file. Both sides modified the same lines, and Git needs manual resolution.
 
 ```bash
@@ -58,7 +58,7 @@ git status
 # UU conflicted-file.txt
 ```
 
-### 🔄 **R** — Renamed
+###  **R** — Renamed
 The file has been renamed (Git detected a delete + add as a rename when similarity is high).
 
 ```bash
@@ -68,7 +68,7 @@ git status
 # R  oldname.txt -> newname.txt
 ```
 
-### 📦 **S** — Submodule
+###  **S** — Submodule
 Indicates a Git submodule (a repository nested inside another repository).
 
 ```bash
