@@ -1,0 +1,6 @@
+cd93f1afab41efb8b6cc4f276022ff3bb7836618 commit	refs/heads/backup-before-secret-cleanup
+814049f1206fedbdecf870dff86247d755e491c9 commit	refs/heads/master
+814049f1206fedbdecf870dff86247d755e491c9 commit	refs/heads/pre-cleanup-backup
+69e660707fc4998722fb9ba651208d38f7a70a2d commit	refs/remotes/origin/HEAD
+69e660707fc4998722fb9ba651208d38f7a70a2d commit	refs/remotes/origin/master
+2d510529b1cd40d794bc844af303adc72c074f98 commit	refs/remotes/origin/none_tracked
