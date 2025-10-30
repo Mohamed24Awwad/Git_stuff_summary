@@ -46,6 +46,15 @@ Most Git tutorials teach *what* to do. This repo teaches *what*, *why*, and *how
 
 ---
 
+## References
+
+This repository draws inspiration and knowledge from excellent Git resources:
+
+- **[Pro Git Book](https://git-scm.com/book/en/v2)** — The definitive guide to Git, covering everything from basics to internals. Free and comprehensive.
+- **[Mark Lodato's Visual Git Guide](https://marklodato.github.io/visual-git-guide/index-en.html)** — Clear visual diagrams explaining Git concepts and commands.
+
+---
+
 ## Contributing
 
 Feel free to fork the repo, suggest improvements, or submit pull requests. Contributions are welcome!
