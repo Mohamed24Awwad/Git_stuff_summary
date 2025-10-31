@@ -454,9 +454,15 @@ git stash drop stash@{0}
 
 ```bash
 git remote -v                      
-# list remotes and URLs
+# list remotes and URLs in details and locations
 git remote add <name> <url>        
 # add a remote
+git remote ./<local directory>
+# To add a remote repo as a local directory at your device
+git remote 
+# To show the remotes you have in short names like ..origin..
+git remote add < directory to remote or remote repo URL>
+# To add more remote repos & you can add more remotes to your local repo to push and pull from them separately.
 cat .git/config                    
 # view remote entries and other config
 git push -u <remote> <branch>      
